@@ -1,0 +1,23 @@
+{
+  "name": "ajvoca",
+  "version": "1.0.0",
+  "description": "this is the application named ajvoca",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo hello"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajiken4610/ajvoca.git"
+  },
+  "author": "ajiken4610",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ajiken4610/ajvoca/issues"
+  },
+  "homepage": "https://github.com/ajiken4610/ajvoca#readme",
+  "devDependencies": {
+    "webpack": "^5.67.0",
+    "webpack-cli": "^4.9.1"
+  }
+}
