@@ -23,7 +23,7 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "index.html",
+      template: "index.pug",
     }),
 
     // Add your plugins here
@@ -50,6 +50,10 @@ const config = {
 
       // Add your rules for custom modules here
       // Learn more about loaders from https://webpack.js.org/loaders/
+      {
+        test: /\.pug$/,
+        use: ["pug-loader"]
+      }
     ],
   },
   resolve: {

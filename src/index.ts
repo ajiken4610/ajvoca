@@ -1,3 +1,20 @@
+// serviceWorkerの初期化
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("service-worker.js")
+      .then((registration) => {
+        console.log("Service Worker registered: ", registration);
+      })
+      .catch((registrationError) => {
+        console.error(
+          "Service Worker registration failed: ",
+          registrationError
+        );
+      });
+  });
+}
+
 // ----Firebaseの初期化----
 
 // Import the functions you need from the SDKs you need
