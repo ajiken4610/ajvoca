@@ -1,18 +1,20 @@
+import "./index.scss";
+
 // serviceWorkerの初期化
 if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker
-      .register("service-worker.js")
-      .then((registration) => {
-        console.log("Service Worker registered: ", registration);
-      })
-      .catch((registrationError) => {
-        console.error(
-          "Service Worker registration failed: ",
-          registrationError
-        );
-      });
-  });
+    window.addEventListener("load", () => {
+        navigator.serviceWorker
+            .register("service-worker.js")
+            .then((registration) => {
+                console.log("Service Worker registered: ", registration);
+            })
+            .catch((registrationError) => {
+                console.error(
+                    "Service Worker registration failed: ",
+                    registrationError
+                );
+            });
+    });
 }
 
 // ----Firebaseの初期化----
@@ -26,13 +28,13 @@ import { getAnalytics } from "firebase/analytics";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBIdXcvrG8MQreFrXK4XPVY_5RRjuRrYmg",
-  authDomain: "ajvoca.firebaseapp.com",
-  projectId: "ajvoca",
-  storageBucket: "ajvoca.appspot.com",
-  messagingSenderId: "433606026411",
-  appId: "1:433606026411:web:b3ad93cdad765e20f503ee",
-  measurementId: "G-9BDFJHSBN7",
+    apiKey: "AIzaSyBIdXcvrG8MQreFrXK4XPVY_5RRjuRrYmg",
+    authDomain: "ajvoca.firebaseapp.com",
+    projectId: "ajvoca",
+    storageBucket: "ajvoca.appspot.com",
+    messagingSenderId: "433606026411",
+    appId: "1:433606026411:web:b3ad93cdad765e20f503ee",
+    measurementId: "G-9BDFJHSBN7",
 };
 
 // Initialize Firebase
@@ -40,15 +42,27 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
 const {
-  initializeAppCheck,
-  ReCaptchaV3Provider,
+    initializeAppCheck,
+    ReCaptchaV3Provider,
 } = require("firebase/app-check");
-// Pass your reCAPTCHA v3 site key (public key) to activate(). Make sure this
-// key is the counterpart to the secret key you set in the Firebase console.
-const appCheck = initializeAppCheck(app, {
-  provider: new ReCaptchaV3Provider("6Lfn9iweAAAAAO22TGfrr3oCcQmWCBi-mrww5Zo3"),
+window.addEventListener("load", () => {
+    // Pass your reCAPTCHA v3 site key (public key) to activate(). Make sure this
+    // key is the counterpart to the secret key you set in the Firebase console.
+    const appCheck = initializeAppCheck(app, {
+        provider: new ReCaptchaV3Provider(
+            "6Lfn9iweAAAAAO22TGfrr3oCcQmWCBi-mrww5Zo3"
+        ),
 
-  // Optional argument. If true, the SDK automatically refreshes App Check
-  // tokens as needed.
-  isTokenAutoRefreshEnabled: true,
+        // Optional argument. If true, the SDK automatically refreshes App Check
+        // tokens as needed.
+        isTokenAutoRefreshEnabled: true,
+    });
+});
+
+// =================================================================
+const { createApp } = require("vue/dist/vue.runtime.esm-bundler.js");
+import App from "./App.vue";
+window.addEventListener("load", () => {
+    const app = createApp(App);
+    app.mount("#app");
 });
