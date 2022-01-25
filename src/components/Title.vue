@@ -1,12 +1,18 @@
 <template lang="pug">
-Title Welcome to Ajivoca
+h1.mdc-typography--headline1.char
+  slot
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Title from "@/components/Title.vue";
+
 export default defineComponent({
-  name: "Home",
-  components: { Title },
+  name: "Title",
 });
 </script>
+
+<style scoped lang="scss">
+.char {
+  text-align: center;
+}
+</style>
