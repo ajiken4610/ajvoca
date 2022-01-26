@@ -1,14 +1,11 @@
 <template lang="pug">
-.test {{size}}
+<main class="mdc-top-app-bar--fixed-adjust">
+  router-view
+</main>
 </template>
-
 <script lang="ts">
 import { defineComponent } from "vue";
-
 export default defineComponent({
-    props: { size: Number },
-    name: "Kuku",
+  name: "Content",
 });
 </script>
-
-<style scoped lang="scss"></style>
