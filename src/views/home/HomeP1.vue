@@ -1,5 +1,5 @@
 <template lang="pug">
-.mdc-theme--surface.mdc-theme--on-surface.full
+.full
   .mdc-layout-grid.outer.full
     .mdc-layout-grid__inner.full
       .mdc-layout-grid__cell--align-middle.mdc-layout-grid__cell--span-12-desktop.mdc-layout-grid__cell--span-8-tablet.mdc-layout-grid__cell--span-4-phone

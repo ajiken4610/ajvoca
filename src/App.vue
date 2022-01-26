@@ -1,7 +1,7 @@
 <template lang="pug">
 .full
   Topbar
-  Content.full
+  Content.full.mdc-theme--surface.mdc-theme--on-surface
 </template>
 
 <script lang="ts">
