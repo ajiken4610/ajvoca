@@ -1,12 +1,11 @@
 <template lang="pug">
-HomeP1
+<main class="mdc-top-app-bar--fixed-adjust">
+  router-view
+</main>
 </template>
-
 <script lang="ts">
 import { defineComponent } from "vue";
-import HomeP1 from "@/views/home/HomeP1.vue";
 export default defineComponent({
-  name: "Home",
-  components: { HomeP1 },
+  name: "Content",
 });
 </script>
