@@ -1,10 +1,10 @@
 <template lang="pug">
-Title Home | AjVoca
-IndexP1
+<main class="mdc-top-app-bar--fixed-adjust">
+  NuxtPage
+</main>
 </template>
-
 <script lang="ts">
 export default defineComponent({
-  name: "Index",
+  name: "Content",
 });
 </script>

@@ -1,10 +1,12 @@
 <template lang="pug">
-Title Home | AjVoca
-IndexP1
+.mdc-typography--overline
+  slot
 </template>
 
 <script lang="ts">
 export default defineComponent({
-  name: "Index",
+  name: "OutlinedText",
 });
 </script>
+
+<style lang="scss"></style>
