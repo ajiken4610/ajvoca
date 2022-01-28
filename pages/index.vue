@@ -1,6 +1,7 @@
 <template lang="pug">
-Title Home | AjVoca
-IndexP1
+.full
+  Title Home | AjVoca
+  IndexP1
 </template>
 
 <script lang="ts">

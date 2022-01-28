@@ -14,5 +14,30 @@ export default defineNuxtConfig({
       },
     ],
   },
-  css: ["~/assets/main.scss"],
+  css: ["~/assets/main.scss", "~/assets/mdc.scss"],
+  modules: ["@nuxtjs/pwa"],
+  pwa: {
+    icon: {
+      source: "C:\\Users\\user\\Documents\\ajvoca\\app\\pwa-icon.ajvoca.png",
+      fileName: "icon_pwa.png",
+    },
+    meta: {
+      mobileAppIOS: true,
+      appleStatusBarStyle: "black",
+    },
+    manifest: {
+      name: "AjiVocaburary",
+      short_name: "AjVoca",
+      icons: [
+        {
+          src: "C:\\Users\\user\\Documents\\ajvoca\\app\\pwa-icon.ajvoca.png",
+          sizes: "512x512",
+          type: "image/png",
+          start_url: "/",
+          lang: "ja",
+          publicPath: "/",
+        },
+      ],
+    },
+  },
 });

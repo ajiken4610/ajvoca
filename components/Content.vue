@@ -8,3 +8,4 @@ export default defineComponent({
   name: "Content",
 });
 </script>
+<style lang="scss"></style>

@@ -12,5 +12,8 @@ export default defineComponent({
       console.log(mes);
     },
   },
+  provide: {
+    isLogined: false,
+  },
 });
 </script>

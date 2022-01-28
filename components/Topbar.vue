@@ -3,10 +3,11 @@
   <div class="mdc-top-app-bar__row">
     <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
       IconButton.mdc-top-app-bar__navigation-icon--unbounded(@click="$emit('toggleSidebar',$event)") menu
-      <span class="mdc-top-app-bar__title">AjiVoca</span>
+      NuxtLink(to="/")
+        span.mdc-top-app-bar__title.mdc-theme--on-primary AjiVoca
     </section>
     <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
-      RouterLink(to="/login")
+      NuxtLink(to="/login")
         IconButton.mdc-top-app-bar__action-item--unbounded(aria-label="Login") login
     </section>
   </div>
