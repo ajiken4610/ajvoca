@@ -1,12 +1,12 @@
 <template lang="pug">
-.mdc-typography--overline
+h2.mdc-typography--headline2.text-center
   slot
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 
-export default defineComponent({});
+export default defineComponent({
+  name: "TitleText",
+});
 </script>
-
-<style lang="scss"></style>

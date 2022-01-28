@@ -1,6 +1,10 @@
 {
+  "functions": {
+    "source": ".output/server"
+  },
   "hosting": {
-    "public": "dist",
+    "site": "ajvoca",
+    "public": ".output/public",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -9,8 +13,34 @@
     "rewrites": [
       {
         "source": "**",
-        "destination": "/index.html"
+        "function": "server"
       }
     ]
+  },
+  "emulators": {
+    "functions": {
+      "port": 5001
+    },
+    "hosting": {
+      "port": 5000
+    },
+    "ui": {
+      "enabled": true
+    },
+    "auth": {
+      "port": 9099
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "database": {
+      "port": 9000
+    },
+    "pubsub": {
+      "port": 8085
+    },
+    "storage": {
+      "port": 9199
+    }
   }
 }
