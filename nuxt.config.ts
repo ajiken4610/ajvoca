@@ -12,10 +12,18 @@ export default defineNuxtConfig({
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Material+Icons",
       },
+      {
+        rel: "stylesheet",
+        href: "https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth.css",
+      },
     ],
   },
   css: ["~/assets/main.scss", "~/assets/mdc.scss"],
-  modules: ["@nuxtjs/pwa"],
+  ssr: false,
+  /*
+  modules: [
+    //"@nuxtjs/pwa"
+  ],
   pwa: {
     icon: {
       source: "C:\\Users\\user\\Documents\\ajvoca\\app\\pwa-icon.ajvoca.png",
@@ -39,5 +47,5 @@ export default defineNuxtConfig({
         },
       ],
     },
-  },
+  },*/
 });

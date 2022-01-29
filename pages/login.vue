@@ -1,12 +1,18 @@
 <template lang="pug">
-div
+.outer
   Title Login | AjVoca
-  div this is login page but it is not reserved.
+  TitleText Sign in with ...
+  AuthUI.inner
 </template>
-<script lang="ts">
-export default defineComponent({
-  setup() {},
-});
-</script>
-
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.inner {
+  vertical-align: middle;
+  margin: 1em;
+}
+.outer {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>

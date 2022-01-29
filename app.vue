@@ -1,7 +1,8 @@
 <template lang="pug">
-.full
+Body.mdc-theme--surface.mdc-theme--on-surface
+.container
   Topbar(@toggleSidebar="log($event)")
-  Content.full.mdc-theme--surface.mdc-theme--on-surface
+  Content
 </template>
 
 <script lang="ts">
