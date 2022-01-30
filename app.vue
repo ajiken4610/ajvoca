@@ -1,13 +1,19 @@
 <template lang="pug">
 Body.mdc-theme--surface.mdc-theme--on-surface
+SideBar(:open="isSideBarOpen")
+Topbar(@toggleSidebar="isSideBarOpen = !isSideBarOpen")
 .container
-  Topbar(@toggleSidebar="log($event)")
   Content
 </template>
 
 <script lang="ts">
 export default defineComponent({
   name: "app",
+  data() {
+    return {
+      isSideBarOpen: false,
+    };
+  },
   methods: {
     log(mes: string) {
       console.log(mes);

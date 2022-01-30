@@ -34,12 +34,11 @@ console.log("hello,firebase");
 
 import { getAuth } from "firebase/auth";
 import * as firebaseui from "firebaseui";
-let authui = new firebaseui.auth.AuthUI(getAuth());
+let auth = getAuth();
+let authui = new firebaseui.auth.AuthUI(auth);
 
 export default defineNuxtPlugin(() => {
   return {
-    provide: {
-      authui,
-    },
+    provide: { auth, authui },
   };
 });

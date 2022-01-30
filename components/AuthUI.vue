@@ -6,7 +6,6 @@ export default defineComponent({
   mounted() {
     let observer = new MutationObserver(() => {
       if (document.querySelector("#authui")) {
-        console.log("EXIST!");
         observer.disconnect();
         useNuxtApp().$authui.start("#authui", {
           signInOptions: [

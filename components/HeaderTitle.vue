@@ -1,4 +1,4 @@
 <template lang="pug">
-h2.mdc-typography--headline2.text-center
+h3.mdc-typography--headline3
   slot
 </template>

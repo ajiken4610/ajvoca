@@ -1,18 +1,15 @@
 <template lang="pug">
-.outer
+.outer.mdc-layout-grid
   Title Login | AjVoca
-  TitleText Sign in with ...
-  AuthUI.inner
+  .mdc-layout-grid__inner.inner
+    TitleText.mdc-layout-grid__cell--align-middle.mdc-layout-grid__cell--span-6-desktop.mdc-layout-grid__cell--span-8-tablet.mdc-layout-grid__cell--span-4-phone Sign in with ...
+    AuthUI.mdc-layout-grid__cell--align-middle.mdc-layout-grid__cell--span-6-desktop.mdc-layout-grid__cell--span-8-tablet.mdc-layout-grid__cell--span-4-phone
 </template>
 <style lang="scss" scoped>
 .inner {
-  vertical-align: middle;
-  margin: 1em;
+  height: 100%;
 }
 .outer {
-  height: 50vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 90vh;
 }
 </style>
