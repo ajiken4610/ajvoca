@@ -30,15 +30,63 @@ const appCheck = initializeAppCheck(app, {
   // tokens as needed.
   isTokenAutoRefreshEnabled: true,
 });
-console.log("hello,firebase");
 
-import { getAuth } from "firebase/auth";
+type FirestoreObject = {
+  [key: string]: null | string | FirestoreObject | FirestoreObject;
+};
+
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { DocumentReference } from "firebase/firestore";
 import * as firebaseui from "firebaseui";
 let auth = getAuth();
 let authui = new firebaseui.auth.AuthUI(auth);
+let isLogined = ref(false);
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // login
+    isLogined.value = true;
+  } else {
+    // logout
+    isLogined.value = false;
+  }
+});
+class SynchronizedDocument {
+  private ref: DocumentReference;
+  private current: FirestoreObject;
+  constructor(documentRef: DocumentReference) {
+    this.ref = documentRef;
+  }
+  public begin() {
+    // TODO:
+  }
+  public stop() {
+    // TODO:
+  }
+  public getCurrent() {
+    return this.current;
+  }
+  public getRef() {
+    return this.ref;
+  }
+  private callbacks: ((syncDoc: SynchronizedDocument) => void)[] = [];
+  public addOnChangeListener(
+    callback: (syncDoc: SynchronizedDocument) => void
+  ) {
+    this.callbacks.push(callback);
+  }
+  private invokeCallbacks() {
+    this.callbacks.forEach((callback) => {
+      try {
+        callback(this);
+      } catch (e) {
+        console.error(e);
+      }
+    });
+  }
+}
 
 export default defineNuxtPlugin(() => {
   return {
-    provide: { auth, authui },
+    provide: { auth, authui, isLogined, SynchronizedDocument },
   };
 });
